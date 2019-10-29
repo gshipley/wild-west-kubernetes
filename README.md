@@ -10,7 +10,7 @@ kubectl apply -f https://raw.githubusercontent.com/gshipley/wild-west-kubernetes
 
 This will create a namespace called *wildwest* and deploy the gshipley/wildwest:latest docker image.  This will also create a service and apply the correct RBAC view role to pull information from the kubernetes API.
 
-By default, the game doesn't actually destroy the pods with you shoot them.  If you want to enable destructive mode, issue the following command:
+By default, the game doesn't actually destroy the pods when you shoot them.  If you want to enable destructive mode, issue the following command:
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/gshipley/wild-west-kubernetes/master/kubernetes/destructive.yaml
