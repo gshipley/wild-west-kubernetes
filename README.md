@@ -5,7 +5,7 @@
 Wild West Kubernetes is a sample application written in Spring Boot and the Phaser game engine to make killing pods fun.  In order to play the game, you need to have a kubernetes cluster running and issue the following command:
 
 ```
-kubectl apply -f git.io/k8s-wild-west
+kubectl apply -f https://git.io/k8s-wild-west
 ```
 
 This will create a namespace called *wildwest* and deploy the gshipley/wildwest:latest docker image.  This will also create a service and apply the correct RBAC view role to pull information from the kubernetes API.
