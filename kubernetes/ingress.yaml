@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-wildwest
+  namespace: wildwest
+  annotations:
+    # use the shared ingress-nginx
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: wildwest.apps.techdope.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: wildwest
+          servicePort: 8080
