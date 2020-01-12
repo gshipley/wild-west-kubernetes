@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang=en>
+<head>
+    <meta charset=utf-8>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="css/jquery-3.4.1.min.js"></script>
+    <script src="css/popper.min.js"></script>
+    <script src="css/phaser.min.js"></script>
+    <script src="assets/game.js" type="text/javascript"></script>
+</head>
+
+<body>
+<header>
+    <center>
+        <img src="assets/kubernetes.png" alt="kubernetes" align="center">
+    </center>
+</header>
+<div style="background:#383838">
+    <div class="container jumbotron" style="padding:.5em; margin:0;">
+        <div class="row">
+            <div class="col-lg-3 menufield">
+                <nav>
+                    <div class="heading">
+                        <h1>Wild West</h1>
+                        <h2>kubernetes</h2>
+                    </div>
+                    <section class="info">
+                        <div class="description">
+                            <h3>Description</h3>
+                            <p><strong>The goal of the game is to shoot Kubernetes platform objects!</strong></p>
+                            <p>Be careful though, if destructive mode is on, you could destroy your game.</p>
+                        </div>
+                    </section>
+
+                    <section class="extra">
+                        <button class="accordion">Controls</button>
+                        <div class="panel">
+                            <p>Use your mouse to aim the gun.</p>
+                            <p>Use the left mouse button to fire.</p>
+                        </div>
+
+                        <button class="accordion ">Game Objects</button>
+                        <div class="panel">
+                            <p><img src="assets/pod.png" alt="Pod"> Pod</p>
+                            <p><img src="assets/service.png" alt="Service"> Service</p>
+                            <p><img src="assets/storage.png" alt="Storage"> Persistent Volume</p>
+                        </div>
+                    </section>
+                </nav>
+            </div>
+            <div class="col-lg-8 gamefield">
+                <div id="main">
+                    <article>
+                        <div id="k8sgame"></div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="grid2">
+            <div>© gshipley</div>
+        </div>
+    </footer>
+
+    <script>
+        // Accordion Menu
+        var acc = document.getElementsByClassName("accordion");
+        var stripes1 = document.querySelector("#stripes1");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
+    </script>
+</div>
+</body>
+</html>
