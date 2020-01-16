@@ -16,7 +16,7 @@ public class PlatformObjectHelper {
 	private ApiClient client;
 	private CoreV1Api api;
 	private String namespace;
-	
+
 	public PlatformObjectHelper() {
 		try {
 
@@ -108,9 +108,11 @@ public class PlatformObjectHelper {
 					break;
 				case "SERVICE":
 					//client.builds().withName(objectName).delete();
+					
 					break;
 				case "PVC":
 					//client.builds().withName(objectName).delete();
+					api.deleteNamespacedPersistentVolumeClaim(objectName, namespace, null, null, null, null, null, null);
 					break;
 			}
 		} catch (Exception e) {
