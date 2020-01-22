@@ -18,7 +18,7 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
       - name: wildwest
-        image: gangchen2011/wildwest:latest
+        image: ibmcloudacademy/wildwest:latest
         imagePullPolicy: Always
         env: 
           - 

@@ -31,16 +31,15 @@
     var locations = [
         [341, 409],  // door 1
         [585, 420],  // door 2
-        [7825, 425],  // door 3
-        [643, 122],  // top of building 3
-        [955, 287],  // building 4 balcony
+        [440, 225],  // bank window
+        [643, 122],  // op of building 3
+        [655, 287],  // building 4 balcony
         [149, 149],  // building 1 left roof
         [149, 140],  // building 1 right roof
-        [860, 634],  // Barrel
+        [490, 634],  // sand
         [30, 530]    // cactus
     ];
 
-    // We need to create the game on the server
     $.ajax({
         url: '/createGame',
         async: false,
