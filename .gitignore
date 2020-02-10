@@ -24,7 +24,8 @@ hs_err_pid*
 
 # IDE
 .vscode
-.setting
+.settings
 .classpath
 .factorypath
 .project
+.target/classes
