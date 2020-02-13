@@ -28,4 +28,4 @@ hs_err_pid*
 .classpath
 .factorypath
 .project
-*/target/*
+.target
