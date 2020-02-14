@@ -19,7 +19,7 @@ spec:
       containers:
       - name: wildwest
         image: ibmcloudacademy/wildwest:latest
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         env: 
           - 
             name: K8S_NAMESPACE
