@@ -3,7 +3,6 @@ kind: RoleBinding
 metadata:
   creationTimestamp: null
   name: edit
-  namespace: wildwest
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -11,4 +10,3 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: default
-    namespace: wildwest
