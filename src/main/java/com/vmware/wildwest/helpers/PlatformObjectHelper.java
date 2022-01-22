@@ -1,10 +1,10 @@
 package com.vmware.wildwest.helpers;
 
 import com.vmware.wildwest.models.PlatformObject;
-import io.kubernetes.client.ApiClient;
-import io.kubernetes.client.Configuration;
-import io.kubernetes.client.apis.CoreV1Api;
-import io.kubernetes.client.models.*;
+import io.kubernetes.client.openapi.ApiClient;
+import io.kubernetes.client.openapi.Configuration;
+import io.kubernetes.client.openapi.apis.CoreV1Api;
+import io.kubernetes.client.openapi.models.*;
 import io.kubernetes.client.util.ClientBuilder;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class PlatformObjectHelper {
 			// set the global default api-client to the in-cluster one from above
 			Configuration.setDefaultApiClient(client);
 			// the CoreV1Api loads default api-client from global configuration.
-			api = new CoreV1Api();
+			api = new CoreV1Api();			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -49,7 +49,7 @@ public class PlatformObjectHelper {
 	private List<PlatformObject> getPods() {
 		ArrayList<PlatformObject> thePods = new ArrayList<>();
 		try {
-			V1PodList pods = api.listNamespacedPod("wildwest", null, null, null, null, null, null, null, null, null);
+			V1PodList pods = api.listNamespacedPod("wildwest", null, null, null, null, null, null, null, null, null, null);
 			for (V1Pod item : pods.getItems()) {
 				thePods.add(new PlatformObject(item.getMetadata().getUid(), item.getMetadata().getName(), "POD"));
 			}
@@ -63,7 +63,7 @@ public class PlatformObjectHelper {
 	private List<PlatformObject> getPVs() {
 		ArrayList<PlatformObject> thePVs = new ArrayList<>();
 		try {
-			V1PersistentVolumeClaimList pvs = api.listNamespacedPersistentVolumeClaim("wildwest", true, null,null,null,null,null
+			V1PersistentVolumeClaimList pvs = api.listNamespacedPersistentVolumeClaim("wildwest",null, true, null,null,null,null,null
 			,null,null,false);
 
 			for (V1PersistentVolumeClaim item : pvs.getItems()) {
@@ -78,7 +78,7 @@ public class PlatformObjectHelper {
 	private List<PlatformObject> getServices() {
 		ArrayList<PlatformObject> theServices = new ArrayList<>();
 		try {
-			V1ServiceList services = api.listNamespacedService("wildwest", true, null, null, null, null, null, null, null, null);
+			V1ServiceList services = api.listNamespacedService("wildwest", null, true, null, null, null, null, null, null, null, null);
 
 			for (V1Service item : services.getItems()) {
 				theServices.add(new PlatformObject(item.getMetadata().getUid(), item.getMetadata().getName(), "SERVICE"));
