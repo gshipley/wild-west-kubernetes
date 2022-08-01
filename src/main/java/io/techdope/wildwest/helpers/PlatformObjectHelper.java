@@ -1,11 +1,11 @@
-package com.vmware.wildwest.helpers;
+package io.techdope.wildwest.helpers;
 
-import com.vmware.wildwest.models.PlatformObject;
 import io.kubernetes.client.openapi.ApiClient;
 import io.kubernetes.client.openapi.Configuration;
 import io.kubernetes.client.openapi.apis.CoreV1Api;
 import io.kubernetes.client.openapi.models.*;
 import io.kubernetes.client.util.ClientBuilder;
+import io.techdope.wildwest.models.PlatformObject;
 
 import java.util.ArrayList;
 import java.util.List;

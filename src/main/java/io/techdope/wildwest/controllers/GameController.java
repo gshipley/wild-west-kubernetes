@@ -1,9 +1,10 @@
-package com.vmware.wildwest.controllers;
+package io.techdope.wildwest.controllers;
 
-import com.vmware.wildwest.models.Game;
-import com.vmware.wildwest.models.Score;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
+
+import io.techdope.wildwest.models.Game;
+import io.techdope.wildwest.models.Score;
 
 import java.util.Hashtable;
 import java.util.Random;
