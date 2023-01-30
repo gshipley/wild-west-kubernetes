@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: wild-west-kubernetes
+  annotations:
+    github.com/project-slug: jorgemoralespou/wild-west-kubernetes
+spec:
+  type: other
+  lifecycle: unknown
+  owner: jorgemoralespou
